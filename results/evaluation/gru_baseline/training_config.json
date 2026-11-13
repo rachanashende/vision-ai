@@ -1,0 +1,106 @@
+{
+  "status": "EXPERIMENTAL / PROVISIONAL",
+  "created_utc": "2026-11-13T18:45:14.459132+00:00",
+  "tensorflow_version": "2.21.0",
+  "keras_version": "3.15.1",
+  "python_version": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "devices": [
+    "PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU')"
+  ],
+  "seed": 42,
+  "max_epochs": 30,
+  "batch_size": 4,
+  "patience": 5,
+  "learning_rate": 0.001,
+  "shuffle": true,
+  "early_stopping_monitor": "val_loss",
+  "min_delta": 0.0001,
+  "restore_best_weights": true,
+  "architecture": "Masking(0) -> GRU(16) -> Dropout(0.2) -> Dense(10, softmax)",
+  "parameters": 8186,
+  "input_shape": [
+    60,
+    149
+  ],
+  "class_to_index": {
+    "book": 0,
+    "drink": 1,
+    "computer": 2,
+    "before": 3,
+    "chair": 4,
+    "go": 5,
+    "clothes": 6,
+    "who": 7,
+    "help": 8,
+    "yes": 9
+  },
+  "index_to_class": [
+    "book",
+    "drink",
+    "computer",
+    "before",
+    "chair",
+    "go",
+    "clothes",
+    "who",
+    "help",
+    "yes"
+  ],
+  "contract_version": "asl-extension-149-v0.1-PROVISIONAL",
+  "reproducibility_notes": [
+    "Bitwise reproducibility is not guaranteed across TF versions, devices, or numerical kernels."
+  ],
+  "dataset_files": {
+    "X_train.npy": {
+      "shape": [
+        17,
+        60,
+        149
+      ],
+      "dtype": "float32",
+      "sha256": "9ba361d674ef9c6bcb52859a8f186d9bd671de6949cb2bb6dc06fd2b31869746"
+    },
+    "y_train.npy": {
+      "shape": [
+        17
+      ],
+      "dtype": "int64",
+      "sha256": "eb78a18b7517cdaef9a9d5f078f0d6bff07008865e914f4c75cacdeae4b8a7d9"
+    },
+    "X_val.npy": {
+      "shape": [
+        5,
+        60,
+        149
+      ],
+      "dtype": "float32",
+      "sha256": "4cbb4c7cd8f6688a4589a736f63b8c544978b55deaf8ff7c9c217b522d5293eb"
+    },
+    "y_val.npy": {
+      "shape": [
+        5
+      ],
+      "dtype": "int64",
+      "sha256": "0a8317e98bcffda55f6935f302556117b1524a4d2bdd1c9809060cfcb6bf5ca3"
+    },
+    "X_test.npy": {
+      "shape": [
+        6,
+        60,
+        149
+      ],
+      "dtype": "float32",
+      "sha256": "aed3bec4941996ff98a718594d15e093a56cd73531cffa06b661d5b40b2297bc"
+    },
+    "y_test.npy": {
+      "shape": [
+        6
+      ],
+      "dtype": "int64",
+      "sha256": "c2afbc7c91093442589836659c0e46f5d3c3f1f9d3693185ea24801787744f96"
+    }
+  },
+  "labels_sha256": "1cfc1e779e782e99fed168454c80652bf4ee6eaa012231d42cd59ea11b7acbd7",
+  "test_selection_policy": "Test split excluded from fitting/stopping; one post-training probability pass."
+}

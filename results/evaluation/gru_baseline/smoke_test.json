@@ -1,0 +1,26 @@
+{
+  "status": "SMOKE TEST ONLY / NOT WEBCAM-VALIDATED",
+  "model": "C:\\Users\\Luzain Sara\\ASL_Recognition_Project\\models\\trained\\PROVISIONAL_v1\\gru_baseline_EXPERIMENTAL.keras",
+  "split": "train",
+  "video_id": "05728",
+  "true_gloss": "before",
+  "predicted_gloss": "who",
+  "predicted_index": 7,
+  "confidence": 0.2530227601528168,
+  "output_shape": [
+    1,
+    10
+  ],
+  "probabilities": [
+    0.16083753108978271,
+    0.04209955036640167,
+    0.04824056476354599,
+    0.24069073796272278,
+    0.04189128056168556,
+    0.03704647719860077,
+    0.07969283312559128,
+    0.2530227601528168,
+    0.03779160976409912,
+    0.05868658795952797
+  ]
+}
