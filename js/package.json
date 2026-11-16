@@ -1,0 +1,10 @@
+{
+  "name": "vision-ai-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Member 3 pipeline logic (buffer, validation, prediction filter) for the Chrome extension",
+  "scripts": {
+    "test": "node --test"
+  }
+}

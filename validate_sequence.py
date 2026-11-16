@@ -1,19 +1,39 @@
+"""Validate a landmark sequence.
+
+Usage:
+    python validate_sequence.py                # checks a dummy zero sequence
+    python validate_sequence.py path/to/seq.npy  # checks a real (60, 149) sequence
+"""
+import sys
 
 import numpy as np
 
-FRAMES = 60
-FEATURES = 149
+import config
+from validation import check_sequence
 
-# Temporary sample data for testing
-sequence = np.zeros((FRAMES, FEATURES), dtype=np.float32)
 
-print("Shape:", sequence.shape)
-print("Data type:", sequence.dtype)
-print("Contains NaN:", np.isnan(sequence).any())
-print("Contains infinity:", np.isinf(sequence).any())
+def main(argv: list[str]) -> int:
+    if len(argv) > 1:
+        sequence = np.load(argv[1])
+        print("Loaded:", argv[1])
+    else:
+        print("No file given - using dummy data (real landmarks not validated yet).")
+        sequence = np.zeros((config.FRAMES, config.FEATURES), dtype=np.float32)
 
-assert sequence.shape == (60, 149)
-assert sequence.dtype == np.float32
-assert np.isfinite(sequence).all()
+    print("Shape:", sequence.shape)
+    print("Data type:", sequence.dtype)
+    if sequence.dtype.kind in "fc":
+        print("Contains NaN:", bool(np.isnan(sequence).any()))
+        print("Contains infinity:", bool(np.isinf(sequence).any()))
 
-print("Basic validation passed!")
+    report = check_sequence(sequence)
+    if report.ok:
+        print("Validation passed!")
+        return 0
+    for err in report.errors:
+        print("FAILED:", err)
+    return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))
