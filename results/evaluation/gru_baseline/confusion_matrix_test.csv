@@ -1,0 +1,11 @@
+actual_gloss,book,drink,computer,before,chair,go,clothes,who,help,yes
+book,0,0,0,0,0,0,0,0,0,0
+drink,0,0,0,0,0,0,0,1,0,0
+computer,0,0,0,0,1,0,0,0,0,0
+before,1,0,0,0,0,0,0,0,0,0
+chair,0,0,0,0,0,0,0,0,0,0
+go,0,0,0,0,0,0,0,0,0,0
+clothes,0,0,0,0,1,0,0,0,0,0
+who,0,0,0,0,0,0,0,1,0,0
+help,1,0,0,0,0,0,0,0,0,0
+yes,0,0,0,0,0,0,0,0,0,0
